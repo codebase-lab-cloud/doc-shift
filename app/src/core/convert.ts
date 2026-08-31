@@ -476,14 +476,20 @@ const WINANSI_MAP: Record<string, string> = {
 
 /** pdf-lib standard fonts speak WinAnsi only; everything else degrades to '?'. */
 function latinize(s: string): string {
-  const NBSP = String.fromCharCode(0xa0);
-  const LAST = String.fromCharCode(0xff);
-  const re = new RegExp('[' + NBSP + '-' + LAST + ']', 'g');
-  return s.replace(re, (ch) => {
-    const mapped = WINANSI_MAP[ch];
-    if (mapped) return mapped;
-    return ch;
-  });
+  // pdf-lib standard fonts speak WinAnsi only. Keep printable ASCII and the
+  // 0xA0-0xFF Latin-1 block, rewrite well-known typography via WINANSI_MAP,
+  // and degrade everything else (arrows, rupee sign, Devanagari, emoji…) to
+  // '?' instead of letting drawText throw "WinAnsi cannot encode".
+  let out = '';
+  for (const ch of s) {
+    const code = ch.codePointAt(0) ?? 0x3f;
+    if ((code >= 0x20 && code <= 0x7e) || (code >= 0xa0 && code <= 0xff)) {
+      out += ch;
+      continue;
+    }
+    out += WINANSI_MAP[ch] ?? '?';
+  }
+  return out;
 }
 
 async function toPdf(blocks: Block[]): Promise<ConvertOutput> {
