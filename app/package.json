@@ -7,9 +7,11 @@
   "scripts": {
     "dev": "vite --host 0.0.0.0",
     "build": "tsc --noEmit && vite build",
+    "publish": "node scripts/publish.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "typecheck": "tsc --noEmit",
-    "privacy:check": "node scripts/privacy-check.mjs"
+    "privacy:check": "node scripts/privacy-check.mjs",
+    "test": "node tests/smoke.mjs"
   },
   "dependencies": {
     "docx": "^9.7.1",
