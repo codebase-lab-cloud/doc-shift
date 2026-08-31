@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DocShift — private document workbench</title>
+<!--
+  Privacy contract (see docs/data-handling.md):
+  - no external requests, ever. Every asset is same-origin.
+  - no service worker, no localStorage/sessionStorage/IndexedDB/Cache API/cookies.
+  - documents live in memory only and are destroyed when the tab closes.
+-->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' 'wasm-unsafe-eval';
+  worker-src 'self' blob:;
+  img-src 'self' data: blob:;
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+  connect-src 'self';
+  frame-src 'none';
+  object-src 'none';
+  base-uri 'none';
+  form-action 'none';
+" />
+<meta name="referrer" content="no-referrer" />
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+<div id="app"></div>
+<script type="module" src="./src/main.ts"></script>
+</body>
+</html>
