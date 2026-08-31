@@ -1,0 +1,20 @@
+{
+  "name": "docshift-verify",
+  "private": true,
+  "type": "module",
+  "description": "Executable proof that the core DocShift claims hold with no backend. Run: npm i && npm run verify",
+  "scripts": {
+    "verify": "node t1.mjs && node t2.mjs && node t3.mjs && node t4.mjs && node t5.mjs && node t7.mjs && node t9.mjs && node t11.mjs",
+    "verify:persistence": "node t10.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.7.1",
+    "jszip": "^3.10.1",
+    "mupdf": "^1.28.0",
+    "pdf-lib": "^1.17.1",
+    "tesseract.js": "^7.0.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.62.1"
+  }
+}
