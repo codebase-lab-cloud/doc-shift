@@ -1,0 +1,13 @@
+# dependencies and build output — never commit these
+node_modules/
+dist/
+.vite/
+*.log
+.cache/
+
+# test artifacts contain generated documents
+app/tests/.artifacts/
+
+# sandbox leftovers
+.sudo_as_admin_successful
+.npm/
