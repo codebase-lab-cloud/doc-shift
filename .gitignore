@@ -1,13 +1,7 @@
-# dependencies and build output — never commit these
 node_modules/
-dist/
-.vite/
-*.log
-.cache/
-
-# test artifacts contain generated documents
-app/tests/.artifacts/
-
-# sandbox leftovers
-.sudo_as_admin_successful
-.npm/
+eng.traineddata
+.t10-profile/
+t10-downloaded.pdf
+out_*
+src.pdf
+page_300dpi.png
