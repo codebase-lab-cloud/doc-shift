@@ -1,3 +1,21 @@
+/* Apple iOS System Typography & Styling */
+body, button, input, select, textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "SF Pro", -system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.topbar {
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.tab, .btn, .tool {
+  transition: transform 0.15s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.15s !important;
+}
+.tab:active, .btn:active, .tool:active {
+  transform: scale(0.97) !important;
+}
+
 /* ============================================================
    doc-shift — Next-Gen Obsidian Glass UI (zero external assets)
    ============================================================ */
