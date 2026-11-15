@@ -70,7 +70,7 @@ function layout(): string {
   return `
   <header class="topbar">
     <div class="brand">
-      <span class="logo">▣</span>
+      <span class="logo" aria-label="DocShift Logo"><svg viewBox="0 0 44 44" width="22" height="22" fill="none"><rect x="4" y="4" width="22" height="30" rx="4" fill="#3b82f6" fill-opacity="0.85"/><polygon points="20,4 26,10 20,10" fill="#93c5fd"/><rect x="16" y="10" width="22" height="30" rx="4" fill="#06b6d4" stroke="#ffffff" stroke-width="1.2" stroke-opacity="0.4"/><polygon points="32,10 38,16 32,16" fill="#ffffff"/><path d="M 22.5,23.5 L 25.5,25.5 L 22.5,27.5" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M 27,23.5 L 30,25.5 L 27,27.5" stroke="#e0f2fe" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       <div>
         <h1>DocShift</h1>
         <p class="tagline">Everything happens in this tab. Nothing is uploaded. Nothing is stored.</p>
